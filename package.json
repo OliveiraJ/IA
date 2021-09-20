@@ -1,0 +1,24 @@
+{
+  "name": "ia-learning",
+  "version": "1.0.0",
+  "description": "Repositório simples usado no meu aprendizado do uso de javascript com redes neurais",
+  "main": "main.js",
+  "dependencies": {
+    "brain.js": "^2.0.0-beta.2",
+    "synaptic": "^1.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OliveiraJ/ia-learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OliveiraJ/ia-learning/issues"
+  },
+  "homepage": "https://github.com/OliveiraJ/ia-learning#readme"
+}
