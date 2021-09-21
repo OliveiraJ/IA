@@ -19,3 +19,10 @@ Certifique-se de que todos os arquivos estão em suas pastas originais, com refo
 
 <p><h6>A versão do NodeJS usada foi a <b>v14.17.6</b>.</h6></p>
 <p><h6>A versão do NPM usada foi a <b>v6.14.15</b>.</h6></p>
+
+<h4>Autores:</h4>
+<ul>
+  <li><a href="https://github.com/OliveiraJ">Jordan Silva Oliveira</a></li>
+  <li><a href="https://github.com/tassioNS9">Tassio Neves</a></li>
+  <li><a href="https://github.com/Andressa-o">Andressa Oliveira</a></li>
+</ul>
