@@ -28,8 +28,8 @@ const testingData = tf.tensor2d(irisTesting.map((item) => [
 // Como podemos notar, na primeira linha o valor que mais se aproxima de 1 é o item na posição [1,1] sendo portanto
 // uma Setosa, já na segunda linha o valor mais próxima de 1 seria o valor [2,2] nos informando que se trata de uma 
 // Virginica e por último na posição [3,3], o formato do resultado nos remete a uma Versicolor. 
-// Tal resultado foi obtido após 100 iterações (épocas), possui 97% de precisão e um erro de 0.012497891671955585,
-// dados esses retornados pelo próprio TensorFlow.
+// Tal resultado foi obtido após 100 iterações (épocas), possui 97% de precisão e um erro de 0.012497891671955585 
+// e uma taxa de aprendizagem de 0.06 definida pelos autores, dados esses retornados pelo próprio TensorFlow.
 
 // Criando a matriz de saída
 const outputData = tf.tensor2d(iris.map((item) => [
@@ -58,16 +58,32 @@ model.add(tf.layers.dense({
   units: 3
 }))
 
-// Ao compilar o modelo o TensorFlow recomenda a utilização dp Adam como algoritimo de otimização, sendo então este
-// o escolhido e como padrão para o Adam a Taxa de aprendizagem definida foi 0.06 
+// Ao compilar o modelo o TensorFlow recomenda a utilização do ADAM como algoritimo de otimização, sendo então este
+// o escolhido e como padrão para o mesmo a Taxa de aprendizagem definida foi 0.001, esta sugerida pelo próprio paper
+// do Adam (ADAM: A Method for Stochastic Optimization, Diederik P. Kingma, Jimmy Ba), que pode ser encontrado no link:
+// https://arxiv.org/pdf/1412.6980.pdf.
 
 model.compile({optimizer: tf.train.adam(.001), loss: "meanSquaredError", metrics: ["accuracy"]})
-// Train the model
+
 const startTime = Date.now();
+
+// Então é feito o treinamento do modelo, como argumento temos primeiramente a primeira matriz com os dados de treinamento
+// em seguida a matriz de saída, permitindo ao algoritimo então o processo de backpropagation e por último a quantidade de
+// épocas ou iterações feitas no processo de treinamento. O valor escolhido foi de 10000, a traxa de aprendizagem
+// (learning rate) é suficientemente pequena para que poucas épocas não sejam suficiente para a aprendizagem, exigindo
+// então um maior número de iterações, mas permitindo ao algoritmo mais precisão ao fim do seu trinamento, ficando ao
+// encargo do usuário encontrar um balanço que permita um uso aceitavel de tempo e poder computacional, ao mesmo tempo em 
+// em que mantém uma boa precisão. Como exemplo, nos testes feitos o treinamento levou por volta de 2 minutos com os
+// parâmetros de 10000 épocas e uma taxa de aprendizagem de 0.001 com o uso do ADAM.
 model.fit(trainingData, outputData, {epochs:10000})
-// Test the model
+
+
+// Por fim é feita a testagem do modelo, sendo possível conferir o tempo levado, mas também o processo de aprendizagem a cada
+// iteração.
 .then((history) => {
-  console.log(history)
+  
+  // Retire o comentário da linha abaixo para ver o passo a passo da aprendizagem.
+  //console.log(history)
   console.log("Tempo de aprendizagem: ", Date.now() - startTime,"ms")
   model.predict(testingData).print() // Expected output [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
 })
