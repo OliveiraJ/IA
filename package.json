@@ -1,24 +1,26 @@
 {
-  "name": "ia-learning",
+  "name": "ia_project",
   "version": "1.0.0",
-  "description": "Repositório simples usado no meu aprendizado do uso de javascript com redes neurais",
-  "main": "main.js",
-  "dependencies": {
-    "brain.js": "^2.0.0-beta.2",
-    "synaptic": "^1.1.4"
-  },
-  "devDependencies": {},
+  "description": "Projeto da disciplina de Inteligencia Artificial",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OliveiraJ/ia-learning.git"
+    "url": "git+https://github.com/OliveiraJ/IA.git"
   },
+  "keywords": [
+    "ai;",
+    "tensorflow"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OliveiraJ/ia-learning/issues"
+    "url": "https://github.com/OliveiraJ/IA/issues"
   },
-  "homepage": "https://github.com/OliveiraJ/ia-learning#readme"
+  "homepage": "https://github.com/OliveiraJ/IA#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.9.0"
+  }
 }
