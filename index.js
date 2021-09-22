@@ -71,11 +71,11 @@ const startTime = Date.now();
 // em seguida a matriz de saída, permitindo ao algoritimo então o processo de backpropagation e por último a quantidade de
 // épocas ou iterações feitas no processo de treinamento. O valor escolhido foi de 10000, a traxa de aprendizagem
 // (learning rate) é suficientemente pequena para que poucas épocas não sejam suficiente para a aprendizagem, exigindo
-// então um maior número de iterações, mas permitindo ao algoritmo mais precisão ao fim do seu trinamento, ficando ao
+// então um maior número de iterações, mas permitindo ao algoritmo mais precisão ao fim do seu treinamento, ficando ao
 // encargo do usuário encontrar um balanço que permita um uso aceitavel de tempo e poder computacional, ao mesmo tempo em 
 // em que mantém uma boa precisão. Como exemplo, nos testes feitos o treinamento levou por volta de 2 minutos com os
 // parâmetros de 10000 épocas e uma taxa de aprendizagem de 0.001 com o uso do ADAM.
-model.fit(trainingData, outputData, {epochs:10000})
+model.fit(trainingData, outputData, {epochs:5000})
 
 
 // Por fim é feita a testagem do modelo, sendo possível conferir o tempo levado, mas também o processo de aprendizagem a cada
@@ -85,5 +85,5 @@ model.fit(trainingData, outputData, {epochs:10000})
   // Retire o comentário da linha abaixo para ver o passo a passo da aprendizagem.
   //console.log(history)
   console.log("Tempo de aprendizagem: ", Date.now() - startTime,"ms")
-  model.predict(testingData).print() // Expected output [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  model.predict(testingData).print() // Saída esperada [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
 })
