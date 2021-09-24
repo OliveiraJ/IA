@@ -11,11 +11,21 @@ dataset para treinamento a <a href="https://www.kaggle.com/rtatman/iris-dataset-
 <li>Já com o NodeJS instalado</li>
 <li>Abra o terminal ou cmd</li>
 <li>$ git clone <b>https://github.com/OliveiraJ/IA</b></li>
+<li>Extraia os arquiovos em uma pasta da sua escolha</li>
+<li>Navegue via terminal ou IDE até a pasta em que extraiu os arquivos</li>
+</lu>
+</p>
+<p>
+<b>Use os seguintes comandos para executar a aplicação:</b></p>
+<lu>
 <li>$ npm install</li>
 <li>$ node index.js</li>
-</ul></p>
+</ul>
+</p>
 
 Certifique-se de que todos os arquivos estão em suas pastas originais, com reforço aos arquivos da pasta ./dataset
+
+Ao fim da execução a aplicação demonstrará os resultados no terminal, assim como dados relacionados ao erro e precisão adquiridos durante o treinamento, demais informações podem ser encontradas em cometários feitos ao longo do código. Dentre os aquivos também se encontra uma breve contextualização teórica,sobre o tipo de rede neural utilizada e a biblioteca TensorFlow.
 
 <p><h6>A versão do NodeJS usada foi a <b>v14.17.6</b>.</h6></p>
 <p><h6>A versão do NPM usada foi a <b>v6.14.15</b>.</h6></p>
